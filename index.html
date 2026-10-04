@@ -124,14 +124,34 @@
   </div>
 
   <div class="status" aria-hidden="true">
-    <span>⎇ main</span><span>✓ 0 notice_period</span><span>.NET 10.0</span>
+    <span>⎇ main</span><span>✓ 0 notice_period</span><span>.NET 10.0</span><span id="visits" class="visits" hidden>👁 <b>0</b> visitors</span>
     <span class="r"><span>Ln 19, Col 2026</span><span>UTF-8</span><span>C#</span><span>Stirling, UK</span></span>
   </div>
 
   <div class="side" aria-hidden="true">CODE · SYSTEMS · INTEGRATIONS · PEOPLE</div>
 </div>
 
+<script data-goatcounter="https://antoniocosta.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 <script>
+  // Visitor count in the status bar. GOATCOUNTER_SITE is the GoatCounter site code;
+  // the number stays hidden until it reaches VISITS_THRESHOLD.
+  (function () {
+    var GOATCOUNTER_SITE = 'antoniocosta';
+    var VISITS_THRESHOLD = 500;
+    var el = document.getElementById('visits');
+    if (!el || !window.fetch) return;
+    fetch('https://' + GOATCOUNTER_SITE + '.goatcounter.com/counter/TOTAL.json')
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) {
+        if (!d) return;
+        var n = parseInt(String(d.count_unique || d.count || '0').replace(/\D/g, ''), 10);
+        if (!(n >= VISITS_THRESHOLD)) return;
+        el.querySelector('b').textContent = n.toLocaleString('en-GB');
+        el.hidden = false;
+      })
+      .catch(function () {});
+  })();
+
   // Line numbers for the editor gutter, sized to the content height.
   (function () {
     var g = document.querySelector('.gutter'), m = document.querySelector('.main');

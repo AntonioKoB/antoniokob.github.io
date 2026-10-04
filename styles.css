@@ -109,6 +109,7 @@ ul{list-style:none} ol{list-style:none}
 /* status bar */
 .status{background:var(--status);color:#fff;font-family:var(--mono);font-size:11px;display:flex;align-items:center;gap:18px;padding:5px 12px;flex-wrap:wrap}
 .status .r{margin-left:auto;display:flex;gap:18px;flex-wrap:wrap}
+.status .visits b{font-weight:500}
 
 .side{position:absolute;right:8px;top:300px;writing-mode:vertical-rl;font-family:var(--mono);font-size:9px;letter-spacing:3px;color:#4b4b4b;pointer-events:none}
 
@@ -171,5 +172,6 @@ ul{list-style:none} ol{list-style:none}
   .foot .cm{font-size:11px;line-height:1.5}
   .foot .qr{display:flex}
   .status{font-size:10px;padding:4px 12px}
+  .status .visits{display:none}
   a{color:inherit}
 }
