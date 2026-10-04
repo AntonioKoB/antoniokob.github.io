@@ -35,7 +35,7 @@
           <p class="decl"><span class="kw">namespace</span> Stirling.Scotland;<br><span class="kw">public sealed class</span> <span class="ty">AntonioCosta</span> : <span class="ty">SeniorDotNetEngineer</span></p>
           <h1 class="name">ANTONIO <em>COSTA</em></h1>
           <p class="sub">// Senior .NET Engineer · Profile sheet</p>
-          <p class="strap"><b>19 years building and modernising systems on the Microsoft stack.</b> Backend first, full stack when it is needed, and happiest when something that was fragile ends up boring and reliable.</p>
+          <p class="strap"><b><span class="yrs">19</span> years building and modernising systems on the Microsoft stack.</b> Backend first, full stack when it is needed, and happiest when something that was fragile ends up boring and reliable.</p>
           <nav class="actions" aria-label="Links">
             <a class="btn primary" href="cv/Antonio_Costa_CV.pdf" download="Antonio_Costa_CV.pdf">Download CV <span class="hint">PDF</span></a>
             <a class="btn" href="https://www.linkedin.com/in/antonioferreiracosta" rel="me">LinkedIn</a>
@@ -105,7 +105,7 @@
             <li><span class="dot"></span><span class="y">2023</span><span class="m">Aqovia, Azure serverless</span></li>
             <li><span class="dot"></span><span class="y">2024</span><span class="m">Mews, hospitality integrations and microservices</span></li>
           </ol>
-          <p class="close">// 19 years in the Microsoft ecosystem</p>
+          <p class="close">// <span class="yrs">19</span> years in the Microsoft ecosystem</p>
         </section>
 
         <section class="reg wide domains" id="domains">
@@ -125,7 +125,7 @@
 
   <div class="status" aria-hidden="true">
     <span>⎇ main</span><span>✓ 0 notice_period</span><span>.NET 10.0</span><span id="visits" class="visits" hidden>👁 <b>0</b> visitors</span>
-    <span class="r"><span>Ln 19, Col 2026</span><span>UTF-8</span><span>C#</span><span>Stirling, UK</span></span>
+    <span class="r"><span>Ln <span class="yrs">19</span>, Col <span class="yr">2026</span></span><span>UTF-8</span><span>C#</span><span>Stirling, UK</span></span>
   </div>
 
   <div class="side" aria-hidden="true">CODE · SYSTEMS · INTEGRATIONS · PEOPLE</div>
@@ -133,6 +133,17 @@
 
 <script data-goatcounter="https://antoniocosta.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 <script>
+  // Years of experience, counted from the first development role.
+  (function () {
+    var CAREER_START = new Date(2007, 8, 24); // 24 September 2007
+    var now = new Date();
+    var years = now.getFullYear() - CAREER_START.getFullYear();
+    if (now.getMonth() < CAREER_START.getMonth() ||
+       (now.getMonth() === CAREER_START.getMonth() && now.getDate() < CAREER_START.getDate())) years--;
+    document.querySelectorAll('.yrs').forEach(function (e) { e.textContent = years; });
+    document.querySelectorAll('.yr').forEach(function (e) { e.textContent = now.getFullYear(); });
+  })();
+
   // Visitor count in the status bar. GOATCOUNTER_SITE is the GoatCounter site code;
   // the number stays hidden until it reaches VISITS_THRESHOLD.
   (function () {
